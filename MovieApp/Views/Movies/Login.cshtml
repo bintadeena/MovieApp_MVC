@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    Login Page
+</h2>
+@*@foreach (string strcountry in ViewBag.Countries)
+    {
+        <li>@strcountry</li>
+    }*@
+@foreach (string strcountry in ViewBag.Countries)
+{
+    <li>@strcountry</li>
+}
+
+<html>
+<head>
+</head>
+<body>
+    <form method="post" asp-action="Login" asp-controller="Movies">
+        <figure>
+            <div>
+                <div class="row">
+                    <div class="col-sm-offset-4 col-sm-8"><h2>ACCESS <br> SIMPLICITY</h2></div>
+                    <div class="col-sm-12 usr mrgn_btm">
+                        <i class='fa fa-user-o' aria-hidden='true'></i>
+                        <input type="text" asp-for="Username" name="Uname" placeholder="User Name" autocomplete="off">
+                        <span class="errors" asp-validation-for="Username"></span>
+                    </div>
+                    <div class="col-sm-12 pass mrgn_btm">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" asp-for="Password" name="Password" placeholder="Password">
+                        <span class="errors" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="col-sm-12 mrgn_btm" style="text-align:center">
+
+                    </div>
+                    <div class="col-sm-12 mrgn_btm">
+                        <input class="sbmt" type="submit" value="LOGIN">
+                    </div>
+                    <div class="col-sm-12">
+
+                    </div>
+                </div>
+            </div>
+        </figure>
+    </form>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+</body>
+@*<body>
+        <br />
+        <label id="LblUsername">Username</label>
+        <input type="text" id="txtUserName" />
+        <br />
+        <label id="lblPassword">Password</label>
+        <input type="text" id="txtPassword" />
+        <br />
+        <button id="btnSubmit" >Sign In</button>
+        <button id="btnCancel">Cancel, go to Home</button>
+    </body>*@
+</html>
